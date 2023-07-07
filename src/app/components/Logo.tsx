@@ -1,6 +1,10 @@
-import Image from "next/image";
+import Link from "next/link";
 
 const Logo = () => {
-  return <Image src="/Logo.svg" alt="Logo" width={103} height={24}></Image>;
+  return (
+    <Link href="/">
+      <div className="logo"></div>
+    </Link>
+  );
 };
 export default Logo;

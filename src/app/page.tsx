@@ -1,5 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
-  return <main className="container">content</main>;
+  return (
+    <>
+      <main className="content">content</main>
+    </>
+  );
 }

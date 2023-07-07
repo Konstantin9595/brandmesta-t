@@ -1,0 +1,56 @@
+.mobile-menu {
+    cursor: pointer;
+    //transition: all 0.5s ease-in-out;
+
+    .close {
+        .first {
+            x: 6.80762px;
+            y: 23.7783px;
+            transform-origin: 6.80762px 23.7783px;
+            transform: rotate(-45deg);
+            transition: all .25s ease-in-out;
+        }
+
+        .second {
+            width: 0px;
+            transition: all .25s ease-in-out;
+        }
+
+        .third {
+            x: 8.22168px;
+            y: 6.80762px;
+            transform-origin: 8.22168px 6.80762px;
+            transform: rotate(45deg);
+            transition: all .25s ease-in-out;
+        }
+    }
+    
+
+    .open {
+        .first {
+            x: 4px;
+            y: 9px;
+            transition: all .25s ease-in-out;
+        }
+
+        .second {
+            x: 4px;
+            y: 15px;
+            transition: all .25s ease-in-out;
+        }
+
+        .third {
+            x: 4px;
+            y: 21px;
+            transition: all .25s ease-in-out;
+        }
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+    .mobile-menu {
+        display: none;
+    }
+}
