@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "../styles/global.scss";
 import localFont from "next/font/local";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const font = localFont({
   src: [
@@ -44,7 +45,8 @@ export default function RootLayout({
       <body className={font.className}>
         <div className="wrapper">
           <Header />
-          <div className="content">{children}</div>
+          <div>{children}</div>
+          <Footer />
         </div>
       </body>
     </html>
