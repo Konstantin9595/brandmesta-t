@@ -2,11 +2,15 @@
 @import 'variables';
 @import 'components/header';
 @import 'components/footer';
+@import 'components/brand-section.scss';
+
 html {
     box-sizing: border-box;
     // background: $black;
     background: #ccc;
     font-size: 14px;
+    background: $black;
+    overflow-x: hidden;
   }
   
 *, *:before, *:after {
@@ -28,42 +32,29 @@ ul {
     padding: 0;
 }
 
-// .large-logo__container {
-//     min-height: 76px;
-//     .large-logo {
-//         // content: url('/large-logo.svg');
-//         // min-width: 328px;
-//         // min-height: 76px;
-//         // display: inline-block;
-//         // min-width: 328px;
-//         // min-height: 76px;
-//     }
-// }
+.eye-icon {
+    background: url("/eyeIcon.svg") center center no-repeat;
+    background-size: contain;
+    min-width: 32px;
+    min-height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
 
-// .large-logo {
-//     min-width: 328px;
-//     min-height: 76px;
-//     background: url("/large-logo.svg") center center no-repeat;
-//     background-size: contain;
-// }
-
+.arrow-right__icon {
+    background: url("/arrow-right.svg") center center;
+    background-size: contain;
+    min-width: 24px;
+    min-height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
 
 .wrapper {
     margin: 0 8px;
+
 }
-// button,
-// input[type="button"],
-// input[type="reset"],
-// input[type="submit"] {
-//   background-color: transparent;
-//   border-width: 0;
-//   font-family: inherit;
-//   font-size: inherit;
-//   font-style: inherit;
-//   font-weight: inherit;
-//   line-height: inherit;
-//   padding: 0;
-// }
+
 @media (min-width: 1200px) {
     .logo::after {
         content: url('/logo.svg');
@@ -71,15 +62,9 @@ ul {
         height: 24px;
         display: inline-block;
     }
+
+    .eye-icon {
+        min-width: 52px;
+        min-height: 52px;
+    }
 }
-
-// .content {
-//     margin: 0 20px;
-// }
-
-
-
-// .container {
-//     margin: 0 auto;
-// }
-
