@@ -1,0 +1,494 @@
+.service {
+    color: $gray;
+    margin-top: -52px;
+    &-title {
+        font-size: 3.429rem;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -1.92px;
+        text-transform: uppercase;
+        margin: 0px 0px 26px 0px;
+    }
+    &-card {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 11.6%;
+        max-width: 328px;
+        text-decoration: none;
+        color: $gray;
+        margin: 32px 0px 9px 0px;
+        // &:nth-child(3) {
+        //     margin-top: 13%;
+        // }
+        &__top {
+            display: flex;
+            border-top: 2px solid $gray;
+            border-left: 2px solid $gray;
+            border-right: 2px solid $gray;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        &__middle {
+        }
+
+        &__bottom {
+            //margin-top: 32px;
+        }
+        &__label {
+            font-size: 2.286rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -1.28px;
+            margin: 0;
+            margin: 22px 50px;
+        }
+
+        &__title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -1.26px;
+            // margin: 2px 0px 12px 0px;
+            margin: 8.3% 0% 4% 0%;
+
+            // &:nth-child(2) {
+            //     margin: 40px 0px 12px 0px;
+            // }
+            // margin-bottom: 0;
+            // margin: 0;
+            // margin-top: 10px;
+        }
+
+        &__description {
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: -0.56px;
+            // margin-top: 12px;
+            // min-height: 80px;
+            margin-right: 2px;
+            margin-bottom: 25px;
+            // margin-top: 12px;
+        }
+
+        &__taglist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5.467px;
+        }
+
+        &__tagitem {
+            border: 1.367px solid $gray;
+            border-radius: 32.8px;
+            font-weight: 500;
+            line-height: 120%;
+            letter-spacing: -0.84px;
+            padding: 3px 8.2px 6px 8.2px;
+            cursor: pointer;
+        }
+        // &__taglink {
+        //     text-decoration: none;
+        //     color: $gray;
+        // }
+
+        
+    }
+
+    &-tablist {
+        overflow: hidden;
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        // margin-bottom: 16px;
+    }
+    &-tabitem {
+        font-size: 2.286rem;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -1.92px;
+        cursor: pointer;
+        min-height: 50px;
+        // margin: 16px 0;
+
+        &__lable {
+            position: relative;
+            .tabitem-icon {
+                position: absolute;
+                right: -35px;
+                top: 0;
+                width: 24px;
+                height: 24px;
+                mask-image: url('/tabitem-icon.svg');
+                mask-position: center center;
+                mask-repeat: no-repeat;
+                mask-size: contain;
+                background-color: $gray;
+            }
+        }
+    }
+
+
+    @keyframes showTabContent {
+        0% {
+            transform: translateY(0%);
+        } 
+        
+
+        50% {
+            transform: translateY(20%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+
+    }
+
+    &-tabcontent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-tabcontent.show {
+        animation: showTabContent 1s ease-in-out;
+    }
+
+    &-tabitem.active {
+        color: $yellow;
+        position: relative;
+        &::after {
+            content: url("/tabitem-border.svg");
+            stroke-width: 3px;
+            stroke: $yellow;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            bottom: -8px;
+        }
+        .tabitem-icon {
+            background-color: $yellow;
+        }
+    }
+
+    &-tabitem {
+        &:hover {
+            color: $yellow;
+            position: relative;
+            &::after {
+                content: url("/tabitem-border.svg");
+                stroke-width: 3px;
+                stroke: $yellow;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                bottom: -8px;
+            }
+
+            .tabitem-icon {
+                width: 24px;
+                height: 24px;
+                mask-image: url('/tabitem-icon.svg');
+                mask-position: center center;
+                mask-repeat: no-repeat;
+                mask-size: contain;
+                background-color: $yellow;
+            }
+        }
+    }
+
+    .explore-icon {
+        mask-image: url('/explore-icon.svg');
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        padding: 34px;
+        background-color: $gray;
+        //background: url('/explore-icon.svg') center center no-repeat;
+        //background: blue;
+        //background: $yellow;
+        //mask-image: url('/explore-icon.svg');
+        // width: 70px;
+        // height: 70px;
+        // background-size: contain;
+
+    }
+
+    .branding-icon {
+        mask-image: url('/branding-icon.svg');
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        padding: 34px;
+        background-color: $gray;
+        // background: url('/branding-icon.svg') center center no-repeat;
+        // // width: 70px;
+        // // height: 70px;
+        // padding: 34px;
+        // background-size: contain;
+    }
+
+    .strategy-icon {
+        mask-image: url('/strategy-icon.svg');
+        mask-position: center center;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        padding: 34px;
+        background-color: $gray;
+        //background: url('/strategy-icon.svg') center center no-repeat;
+        // width: 70px;
+        // height: 70px;
+        //padding: 34px;
+        //background-size: contain;
+
+        //background: $yellow;
+        //mask-image: url('/explore-icon.svg');
+    }
+
+    // .m-auto {
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
+}
+
+
+@media (min-width: 768px) {
+    .service {
+        &-card {
+            max-width: 360px;
+            &__title {
+                margin: 7.3% 0% 3% 0%;
+            }
+
+            &:hover {
+                color: $yellow;
+                border: $yellow;
+                .branding-icon, .explore-icon, .strategy-icon {
+                    padding: 34px;
+                    background-color: $yellow;
+                }
+
+                .service-card__top {
+                    border-top: 2px solid $yellow;
+                    border-left: 2px solid $yellow;
+                    border-right: 2px solid $yellow;
+                }
+                .service-card__tagitem {
+                    border-color: $yellow;
+                }
+            }
+
+        }
+
+        &-tablist {
+            width: 49%;
+            margin-left: auto;
+            margin-top: -62px;
+        }
+
+        &-tabcontent {
+            align-items: start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        // &-tabitem.active {
+        //     &::after {
+        //         bottom: 12px;
+        //     }
+        // }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .service {
+        padding: 0px 22px;
+        &-card {
+            max-width: 347px;
+            margin-top: 0;
+
+            &__label {
+                font-size: 3.357rem;
+                letter-spacing: -1.88px;
+                margin: 39px 50px;
+            }
+            &__title {
+                margin: 38px 0px 25px 0px;
+                font-size: 2.071rem;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%;
+                letter-spacing: -1.16px;
+            }
+
+            &:nth-child(1) {
+                margin-top: -2%;
+            }
+
+            &:nth-child(2) {
+                margin-top: 29.2%;
+            }
+
+            &:nth-child(3) {
+                margin-top: 8%;
+            }
+
+            &__description {
+                font-size: 1.286rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 140%;
+                letter-spacing: -0.72px;
+            }
+
+
+
+            &__bottom {
+                margin-top: 34px;
+                position: relative;
+            }
+            
+
+            &:hover {
+                // color: $yellow;
+                // border: $yellow;
+                // .branding-icon, .explore-icon, .strategy-icon {
+                //     padding: 34px;
+                //     background-color: $yellow;
+                // }
+                
+                .service-card__layer {
+                    transform: translateY(4%);
+                    opacity: 0;
+                }
+
+                // .service-card__top {
+                //     border-top: 2px solid $yellow;
+                //     border-left: 2px solid $yellow;
+                //     border-right: 2px solid $yellow;
+                // }
+                // .service-card__tagitem {
+                //     border-color: $yellow;
+                // }
+                // .service-card__taglink {
+                //     color: $yellow;
+                // }
+
+            }
+
+            &__tagitem {
+                padding: 4px 12px 8px 12px;
+                font-size: 1.286rem;
+                border: 2px solid $gray;
+            }
+
+
+            &__layer {
+                width: 100%;
+                height: 127px;
+                position: absolute;
+                background: $black;
+                transform: translateY(-98%);
+                &::after {
+                    content: url("/more.svg");
+                    width: 49px;
+                    height: 34px;
+                }
+            }
+
+        }
+
+        &-title {
+            margin-top: 12.2%;
+            font-size: 8.786rem;
+        }
+
+        &-tabitem {
+            font-size: 3.357rem;
+            min-height: 100px;
+            font-weight: 500;
+            line-height: 120%;
+            letter-spacing: -2.82px;
+            margin: 1px;
+        }
+
+        &-tabitem.active {
+            &::after {
+                bottom: 14px;
+            }
+        }
+
+        &-tablist {
+            width: 48%;
+            margin-left: auto;
+            margin-top: -130px;
+        }
+
+        &-tabcontent {
+            
+        }
+
+
+        .explore-icon,
+        .branding-icon,
+        .strategy-icon {
+            will-change: padding;
+            padding: 110px;
+            transition: padding 0.7s ease-in-out;
+        }
+    }
+}
+
+
+
+
+@media (min-width: 1600px) {
+    .service {
+        &-card {
+            max-width: 480px;
+
+
+            &__layer {
+                transform: translateY(-63%);
+
+                &::after {
+                    position: absolute;
+                    right: 0%;
+                    top: -26%;
+                }
+            }
+
+            &:nth-child(2) {
+                margin-top: 21.5%;
+            }
+
+            &:nth-child(3) {
+                margin-top: 5%;
+            }
+
+            &__tagitem {
+                padding: 3px 8.2px 6px 8.2px;
+            }
+
+        }
+
+        &-title {
+            margin-top: 9.4%;
+        }
+
+        &-tablist {
+            width: 48%;
+            margin-left: 51.2%;
+            margin-top: -136px;
+        }
+    }
+}

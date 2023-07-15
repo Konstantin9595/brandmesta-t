@@ -2,8 +2,8 @@
 @import 'variables';
 @import 'components/header';
 @import 'components/footer';
-@import 'components/brand-section.scss';
-
+@import 'components/brand-section';
+@import 'components/service-section';
 html {
     box-sizing: border-box;
     // background: $black;
