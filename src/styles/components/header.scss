@@ -31,17 +31,9 @@
                 margin-top: auto;
                 margin-bottom: 38px;
                 text-align: center;
-                .button {
-                    all: unset;
-                    padding: 12px 0px;
-                    color: $gray;
-                    border: 2px solid rgba(216, 230, 241, 0.40);
-                    box-sizing: border-box;
-                    border-radius: 48px;
-                    cursor: pointer;
-                    width: 95%;
-                    text-align: center;
-                }
+                // .button {
+                //     width: 100%;
+                // }
             }
         }
         .header-top__right.hidden {

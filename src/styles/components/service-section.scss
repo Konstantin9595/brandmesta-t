@@ -283,6 +283,14 @@
         }
     }
 
+    &-button {
+        margin-top: -4px;
+        text-align: center;
+        .button {
+            padding: 22px 52px 26px 52px;
+        }
+    }
+
     .explore-icon {
         mask-image: url('/explore-icon.svg');
         mask-position: center center;
@@ -484,8 +492,6 @@
 
 
         &-list {
-            // flex-direction: row;
-            // justify-content: space-between;
             margin-top: -6px;
             
             &__item {
@@ -503,6 +509,13 @@
                 letter-spacing: -0.306px;
                 padding-bottom: 36px;
                 max-width: 95%;
+            }
+        }
+
+        &-button {
+            margin-top: 37px;
+            .button {
+                //padding: 20px 52px 24px 52px;
             }
         }
 

@@ -54,6 +54,39 @@ ul {
 
 }
 
+.button {
+    all: unset;
+    color: $gray;
+    border: 2px solid rgba(216, 230, 241, 0.40);
+    border-radius: 48px;
+    cursor: pointer;
+    padding: 20px 66px 24px 65px;
+    font-size: 1.286rem;
+    text-align: center;
+    font-weight: 500;
+    line-height: 100%; /* 18px */
+    letter-spacing: -0.72px;
+
+    &:active, &:hover {
+        background: $yellow;
+        border: 2px solid $yellow;
+        color: $black;
+    }
+
+    // &:focus {
+    //     background: $yellow;
+    // }
+
+    // &:active {
+    //     //background: $yellow;
+    // }
+
+}
+// .button {
+
+// }
+
+
 @media (min-width: 1200px) {
     .logo::after {
         content: url('/logo.svg');
