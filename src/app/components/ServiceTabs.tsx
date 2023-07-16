@@ -23,6 +23,10 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabItems, tabContents }) => {
     const element = e.target as HTMLElement;
     let tabIndex = element.tabIndex;
 
+    if (activeTabId === tabIndex) {
+      return;
+    }
+
     if (element.tabIndex === -1) {
       const closest = element.closest("li");
       tabIndex = closest ? closest.tabIndex : -1;

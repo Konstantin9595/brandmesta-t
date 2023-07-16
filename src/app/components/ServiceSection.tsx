@@ -1,3 +1,4 @@
+import ServiceList from "./ServiceList";
 import ServiceTabs from "./ServiceTabs";
 
 export type TabItem = {
@@ -18,6 +19,13 @@ export type TabContent = {
   cardDescription: string;
   cardTags: CardTag[];
   iconName: string;
+};
+
+export type ServiceItem = {
+  id: number;
+  label: string;
+  description: string;
+  href: string;
 };
 
 const getTabItems = async (): Promise<TabItem[]> => {
@@ -132,14 +140,42 @@ const getTabContents = async (tabItemIds: string[]): Promise<TabContent[]> => {
   return tabContents;
 };
 
+const getServiceItems = async () => {
+  const serviceItems: ServiceItem[] = [
+    {
+      id: 1,
+      label: "Разработка сайта",
+      description:
+        "Когда пришла пора действовать, но не хватает самого главного",
+      href: "#",
+    },
+    {
+      id: 2,
+      label: "Обучение",
+      description:
+        "Когда ваша цель - лично во всем разобраться и стать экспертом",
+      href: "#",
+    },
+    {
+      id: 3,
+      label: "Консультации",
+      description:
+        "Когда хочется сделать своими руками, но остались важные вопросы",
+      href: "#",
+    },
+  ];
+  return serviceItems;
+};
+
 const ServiceSection = async () => {
   const tabItems = await getTabItems();
   const tabContents = await getTabContents(["1", "2"]);
-
+  const serviceItems = await getServiceItems();
   return (
     <section className="service">
       <h2 className="service-title">Услуги</h2>
       <ServiceTabs tabItems={tabItems} tabContents={tabContents} />
+      <ServiceList serviceItems={serviceItems} />
     </section>
   );
 };

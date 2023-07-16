@@ -19,9 +19,8 @@
         text-decoration: none;
         color: $gray;
         margin: 32px 0px 9px 0px;
-        // &:nth-child(3) {
-        //     margin-top: 13%;
-        // }
+
+
         &__top {
             display: flex;
             border-top: 2px solid $gray;
@@ -32,11 +31,13 @@
             align-items: center;
             text-align: center;
         }
+
         &__middle {
+
         }
 
         &__bottom {
-            //margin-top: 32px;
+
         }
         &__label {
             font-size: 2.286rem;
@@ -67,11 +68,8 @@
             font-weight: 400;
             line-height: 140%;
             letter-spacing: -0.56px;
-            // margin-top: 12px;
-            // min-height: 80px;
             margin-right: 2px;
             margin-bottom: 25px;
-            // margin-top: 12px;
         }
 
         &__taglist {
@@ -89,11 +87,23 @@
             padding: 3px 8.2px 6px 8.2px;
             cursor: pointer;
         }
-        // &__taglink {
-        //     text-decoration: none;
-        //     color: $gray;
-        // }
 
+        &:hover {
+            color: $yellow;
+            border: $yellow;
+            .branding-icon, .explore-icon, .strategy-icon {
+                background-color: $yellow;
+            }
+
+            .service-card__top {
+                border-top: 2px solid $yellow;
+                border-left: 2px solid $yellow;
+                border-right: 2px solid $yellow;
+            }
+            .service-card__tagitem {
+                border-color: $yellow;
+            }
+        }
         
     }
 
@@ -102,8 +112,8 @@
         gap: 12px;
         display: flex;
         flex-direction: column;
-        // margin-bottom: 16px;
     }
+
     &-tabitem {
         font-size: 2.286rem;
         font-weight: 500;
@@ -129,7 +139,6 @@
             }
         }
     }
-
 
     @keyframes showTabContent {
         0% {
@@ -203,6 +212,77 @@
         }
     }
 
+    &-list {
+        margin-top: 37px;
+        display: flex;
+        flex-direction: column;
+        &__item {
+            border-bottom: 2px solid $gray;
+            margin-bottom: 40px;
+            position: relative;
+            &::after {
+                content: "";
+                mask-image: url('/star.svg');
+                mask-repeat: no-repeat;
+                mask-position: center;
+                mask-size: contain;
+                background-color: $gray;
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                right: 0px;
+                top: 2px;
+
+                @media (min-width: 1200px) {
+                    //content: "";
+                    //mask-image: url('/star.svg');
+                    //background-color: $gray;
+                    //background-repeat: no-repeat;
+                    width: 24px;
+                    height: 24px;
+                   //position: absolute;
+                    // right: 0px;
+                    // top: 2px;
+                }
+            }
+
+            &:hover {
+                border-color: $yellow;
+                &::after {
+                    background-color: $yellow;
+                }
+            }
+
+        }
+
+        &__link {
+            color: $gray;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            &:hover {
+                color: $yellow;
+            }
+        }
+
+        &__title {
+            margin: 0;
+            margin-bottom: 24px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 100%;
+            letter-spacing: -1.26px;
+        }
+
+        &__description {
+            padding-bottom: 40px;
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: -0.56px;
+            max-width: 70%;
+        }
+    }
+
     .explore-icon {
         mask-image: url('/explore-icon.svg');
         mask-position: center center;
@@ -210,14 +290,6 @@
         mask-size: contain;
         padding: 34px;
         background-color: $gray;
-        //background: url('/explore-icon.svg') center center no-repeat;
-        //background: blue;
-        //background: $yellow;
-        //mask-image: url('/explore-icon.svg');
-        // width: 70px;
-        // height: 70px;
-        // background-size: contain;
-
     }
 
     .branding-icon {
@@ -227,11 +299,6 @@
         mask-size: contain;
         padding: 34px;
         background-color: $gray;
-        // background: url('/branding-icon.svg') center center no-repeat;
-        // // width: 70px;
-        // // height: 70px;
-        // padding: 34px;
-        // background-size: contain;
     }
 
     .strategy-icon {
@@ -241,23 +308,8 @@
         mask-size: contain;
         padding: 34px;
         background-color: $gray;
-        //background: url('/strategy-icon.svg') center center no-repeat;
-        // width: 70px;
-        // height: 70px;
-        //padding: 34px;
-        //background-size: contain;
-
-        //background: $yellow;
-        //mask-image: url('/explore-icon.svg');
     }
-
-    // .m-auto {
-    //     margin-left: auto;
-    //     margin-right: auto;
-    // }
-
 }
-
 
 @media (min-width: 768px) {
     .service {
@@ -268,20 +320,8 @@
             }
 
             &:hover {
-                color: $yellow;
-                border: $yellow;
                 .branding-icon, .explore-icon, .strategy-icon {
                     padding: 34px;
-                    background-color: $yellow;
-                }
-
-                .service-card__top {
-                    border-top: 2px solid $yellow;
-                    border-left: 2px solid $yellow;
-                    border-right: 2px solid $yellow;
-                }
-                .service-card__tagitem {
-                    border-color: $yellow;
                 }
             }
 
@@ -300,14 +340,38 @@
             justify-content: space-between;
         }
 
-        // &-tabitem.active {
-        //     &::after {
-        //         bottom: 12px;
-        //     }
-        // }
+        &-list {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 49px;
+            
+            &__item {
+                width: 32%;
+                //margin-right: 16px;
+                // &:hover {
+                //     color: $yellow;
+                //     border-color: $yellow;
+                // }
+                
+            }
+    
+            // &__link {
+            //     &:hover {
+            //         color: $yellow;
+            //     }
+            // }
+    
+            // &__title {
+            // }
+    
+            &__description {
+                //padding-bottom: 19px;
+                max-width: 100%;
+            }
+        }
+
     }
 }
-
 
 @media (min-width: 1200px) {
     .service {
@@ -353,35 +417,16 @@
 
 
             &__bottom {
-                margin-top: 34px;
+                //margin-top: 34px;
                 position: relative;
             }
             
 
             &:hover {
-                // color: $yellow;
-                // border: $yellow;
-                // .branding-icon, .explore-icon, .strategy-icon {
-                //     padding: 34px;
-                //     background-color: $yellow;
-                // }
-                
                 .service-card__layer {
                     transform: translateY(4%);
                     opacity: 0;
                 }
-
-                // .service-card__top {
-                //     border-top: 2px solid $yellow;
-                //     border-left: 2px solid $yellow;
-                //     border-right: 2px solid $yellow;
-                // }
-                // .service-card__tagitem {
-                //     border-color: $yellow;
-                // }
-                // .service-card__taglink {
-                //     color: $yellow;
-                // }
 
             }
 
@@ -438,6 +483,30 @@
         }
 
 
+        &-list {
+            // flex-direction: row;
+            // justify-content: space-between;
+            margin-top: -6px;
+            
+            &__item {
+                width: 31%;
+                border-bottom: 3px solid $gray;
+            }
+    
+            &__title {
+                font-size: 2.071rem;
+                margin-bottom: 39px;
+            }
+    
+            &__description {
+                font-size: 1.286rem;
+                letter-spacing: -0.306px;
+                padding-bottom: 36px;
+                max-width: 95%;
+            }
+        }
+
+
         .explore-icon,
         .branding-icon,
         .strategy-icon {
@@ -447,9 +516,6 @@
         }
     }
 }
-
-
-
 
 @media (min-width: 1600px) {
     .service {
@@ -490,5 +556,22 @@
             margin-left: 51.2%;
             margin-top: -136px;
         }
+
+        &-list {
+            // flex-direction: row;
+            // justify-content: space-between;
+            margin-top: 42px;
+
+
+            &__item {
+                width: 31.6%;
+            }
+
+            &__description {
+                max-width: 65%;
+            }
+        }
+
+
     }
 }
