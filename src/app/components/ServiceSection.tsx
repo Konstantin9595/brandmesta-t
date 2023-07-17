@@ -1,3 +1,4 @@
+import CallToActionButton from "./CallToActionButton";
 import ServiceList from "./ServiceList";
 import ServiceTabs from "./ServiceTabs";
 
@@ -176,6 +177,7 @@ const ServiceSection = async () => {
       <h2 className="service-title">Услуги</h2>
       <ServiceTabs tabItems={tabItems} tabContents={tabContents} />
       <ServiceList serviceItems={serviceItems} />
+      <CallToActionButton />
     </section>
   );
 };

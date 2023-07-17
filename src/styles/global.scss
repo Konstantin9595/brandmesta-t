@@ -4,9 +4,11 @@
 @import 'components/footer';
 @import 'components/brand-section';
 @import 'components/service-section';
+@import 'components/callToActionButton';
+
 html {
     box-sizing: border-box;
-    background: #ccc;
+    background: $black;
     font-size: 14px;
     background: $black;
     overflow-x: hidden;
@@ -51,7 +53,7 @@ ul {
 
 .wrapper {
     margin: 0 8px;
-
+    
 }
 
 .button {

@@ -1,0 +1,48 @@
+.callToAction {
+    margin-top: 63px;
+    display: flex;
+    .callToActionButton {
+        all: unset;
+        padding: 40px 50px 40px 50px;
+        text-align: center;
+        font-size: 2.286rem;
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -1.92px;
+        border-radius: 56px;
+        cursor: pointer;
+        background-image: url("/BG.png");
+        background-color: transparent;
+        background-position: 50% 60%;
+        background-repeat: no-repeat;
+        background-size: 200%;
+        color: $black;
+        transition: background-position 0.4s cubic-bezier(0,-0.01,.25,1);
+        width: 100%;
+        &:hover {
+            background-position: 50% 75%;
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .callToAction {
+        margin-top: 83px;
+        .callToActionButton {
+            font-size: 3.357rem;
+            font-weight: 500;
+            line-height: 120%;
+            letter-spacing: -2.82px;
+            border-radius: 72px;
+        }
+    }
+}
+
+@media (min-width: 1600px) {
+    .callToAction {
+        margin-top: 157px;
+        .callToActionButton {
+        }
+    }
+}
