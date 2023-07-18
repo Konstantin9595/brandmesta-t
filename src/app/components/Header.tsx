@@ -2,10 +2,12 @@ import HeaderMenu from "./HeaderMenu";
 import HeaderLeftStatic from "./HeaderLeftStatic";
 import HeaderRightDynamic from "./HeaderRightDynamic";
 import Image from "next/image";
+import SvgAnimation from "./SvgAnimation";
 
 const Header = () => {
   return (
     <header className="header">
+      <SvgAnimation />
       <div className="header-top">
         <HeaderLeftStatic />
         <HeaderRightDynamic>

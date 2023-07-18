@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SvgAnimation from "./SvgAnimation";
 
 type FooterMenuItem = {
   id: string;
@@ -34,6 +35,7 @@ const Footer = async () => {
 
   return (
     <div className="footer">
+      <SvgAnimation />
       <div className="footer-menu">
         <ul className="footer-menu__list">
           {footerMenuList.map((item: FooterMenuItem) => {

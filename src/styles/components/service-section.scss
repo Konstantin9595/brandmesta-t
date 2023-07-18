@@ -1,6 +1,8 @@
 .service {
     color: $gray;
+    margin: 0 8px;
     margin-top: -52px;
+    //margin-bottom: 370px;
     &-title {
         font-size: 3.429rem;
         font-weight: 700;
@@ -89,6 +91,7 @@
         }
 
         &:hover {
+            text-decoration: none;
             color: $yellow;
             border: $yellow;
             .branding-icon, .explore-icon, .strategy-icon {
@@ -261,6 +264,7 @@
             display: inline-block;
             width: 100%;
             &:hover {
+                text-decoration: none;
                 color: $yellow;
             }
         }

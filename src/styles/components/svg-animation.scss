@@ -1,0 +1,67 @@
+@keyframes firstRectangleAnimate {
+    from {
+        transform: translate3d(150%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes secondRectangleAnimate {
+    from {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes thirdRectangleAnimate {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 50%, 0);
+    }
+}
+
+@keyframes fourthRectangleAnimate {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, -50%, 0);
+    }
+}
+
+.svg-canvas {
+    position: absolute;
+    z-index: -1;
+    min-width: 360px;
+    min-height: 600px;
+    filter: blur(70px) saturate(1.2);
+    .rectangle {
+        position: relative;
+        mix-blend-mode: lighten;
+    }
+    .rectangle-1 {
+        /* @keyframes duration | easing-function | delay |
+        iteration-count | direction | fill-mode | play-state | name 
+        animation: 3s ease-in 1s 2 reverse both paused slidein;
+        */
+        animation: 12s linear 0s infinite alternate both running firstRectangleAnimate;
+    }
+    .rectangle-2 {
+        animation: 12s linear 0s infinite alternate both running secondRectangleAnimate;
+    }
+    .rectangle-3 {
+        animation: 12s linear 0s infinite alternate both running thirdRectangleAnimate;
+    }
+    .rectangle-4 {
+        animation: 12s linear 0s infinite alternate both running fourthRectangleAnimate;
+    }
+}

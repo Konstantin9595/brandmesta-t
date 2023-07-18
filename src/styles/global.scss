@@ -5,7 +5,7 @@
 @import 'components/brand-section';
 @import 'components/service-section';
 @import 'components/callToActionButton';
-
+@import 'components/svg-animation.scss';
 html {
     box-sizing: border-box;
     background: $black;
@@ -13,7 +13,11 @@ html {
     background: $black;
     overflow-x: hidden;
   }
-  
+
+// body {
+//     background: url('/BG.png') center center;
+// }
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
@@ -31,6 +35,12 @@ ul {
     }
     margin: 0;
     padding: 0;
+}
+
+a {
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .eye-icon {
@@ -52,8 +62,7 @@ ul {
 }
 
 .wrapper {
-    margin: 0 8px;
-    
+    //margin: 0 8px;
 }
 
 .button {
@@ -87,7 +96,6 @@ ul {
 // .button {
 
 // }
-
 
 @media (min-width: 1200px) {
     .logo::after {
