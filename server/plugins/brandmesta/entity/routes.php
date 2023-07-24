@@ -3,6 +3,7 @@
 use Brandmesta\Entity\Models\PageMetaData;
 use Brandmesta\Entity\Models\ServiceListItem;
 use Brandmesta\Entity\Models\ServiceTabItem;
+use Brandmesta\Entity\Models\ServiceTabOption;
 use Brandmesta\Entity\Models\ServiceTag;
 
 Route::group(['prefix' => 'api'], function () {
@@ -26,5 +27,9 @@ Route::group(['prefix' => 'api'], function () {
 
     Route::get('service/tags', function () {
         return Response::json(ServiceTag::all());
+    });
+
+    Route::get('service/tab-options', function () {
+        return Response::json(ServiceTabOption::all());
     });
 });

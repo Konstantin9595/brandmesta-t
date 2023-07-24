@@ -1,16 +1,6 @@
 import Link from "next/link";
 import SvgAnimation from "./SvgAnimation";
-
-type FooterMenuItem = {
-  id: string;
-  label: string;
-  href: string;
-};
-
-type ContactItem = {
-  phone: string;
-  email: string;
-};
+import { ContactItem, FooterMenuItem } from "@/types";
 
 const getFooterMenu = async (): Promise<FooterMenuItem[]> => {
   const footerMenu = [

@@ -1,7 +1,5 @@
 <?php
 
-namespace Brandmesta\Entity\Updates;
-
 use Winter\Storm\Database\Schema\Blueprint;
 use Winter\Storm\Database\Updates\Migration;
 use Winter\Storm\Support\Facades\Schema;
@@ -15,14 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('brandmesta_entity_service_tab_items', function (Blueprint $table) {
+        Schema::create('brandmesta_entity_service_tab_options', function (Blueprint $table) {
             $table->id();
             $table->string('label', 100);
-            $table->string('title', 100);
-            $table->string('description');
-            $table->string('icon_name', 40);
-            $table->unsignedBigInteger('tab_option_id');
-            $table->timestamps();
+            //$table->unsignedBigInteger('tab_item_id');
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brandmesta_entity_service_tab_items');
+        Schema::dropIfExists('brandmesta_entity_service_tab_options');
     }
 };

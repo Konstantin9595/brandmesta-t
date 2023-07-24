@@ -1,10 +1,17 @@
 import HeaderMenu from "./HeaderMenu";
 import HeaderLeftStatic from "./HeaderLeftStatic";
 import HeaderRightDynamic from "./HeaderRightDynamic";
-import Image from "next/image";
 import SvgAnimation from "./SvgAnimation";
+import { fetchPageData } from "../../http/api";
 
-const Header = () => {
+const getTitle = async () => {
+  const { title } = await fetchPageData(1);
+
+  return title;
+};
+
+const Header = async () => {
+  const title = await getTitle();
   return (
     <header className="header">
       <SvgAnimation />
@@ -15,7 +22,7 @@ const Header = () => {
         </HeaderRightDynamic>
       </div>
       <div className="header-bottom">
-        <h1 className="header-title">Агентство территориального брендинга</h1>
+        <h1 className="header-title">{title}</h1>
         <div className="header-largelogo"></div>
       </div>
     </header>

@@ -5,16 +5,16 @@ namespace Brandmesta\Entity\Models;
 use Model;
 
 /**
- * ServiceTabItem Model
+ * TabOption Model
  */
-class ServiceTabItem extends Model
+class ServiceTabOption extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'brandmesta_entity_service_tab_items';
+    public $table = 'brandmesta_entity_service_tab_options';
 
     /**
      * @var array Guarded fields
@@ -29,12 +29,7 @@ class ServiceTabItem extends Model
     /**
      * @var array Validation rules for attributes
      */
-    public $rules = [
-        'label' => 'required|string',
-        'title' => 'required|string',
-        'description' => 'required|string',
-        'icon_name' => 'required|string'
-    ];
+    public $rules = [];
 
     /**
      * @var array Attributes to be cast to native types
@@ -69,24 +64,16 @@ class ServiceTabItem extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        // 'service_tags' => [
-        //     ServiceTag::class,
-        //     'table' => 'brandmesta_entity_service_tags'
-        // ]
+        'tab_item' => [
+            ServiceTabItem::class,
+            'table' => 'brandmesta_entity_service_tab_items',
+            'key' => 'tab_option_id'
+        ]
     ];
     public $hasOneThrough = [];
     public $hasManyThrough = [];
     public $belongsTo = [];
-    public $belongsToMany = [
-        'service_tag' => [
-            ServiceTag::class,
-            'table' => 'brandmesta_entity_tab_service_tag'
-        ],
-        'tab_option' => [
-            TabOption::class,
-            'table' => 'brandmesta_entity_service_tab_options',
-        ]
-    ];
+    public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

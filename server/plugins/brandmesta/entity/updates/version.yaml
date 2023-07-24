@@ -20,3 +20,7 @@
     - v1.0.0/seed_service_tags.php
     - 'Seed tab service tag'
     - v1.0.0/seed_tab_service_tag.php
+    - 'Create TabOptions Table'
+    - v1.0.0/create_service_tab_options_table.php
+    - 'Seed tab options Table'
+    - v1.0.0/seed_service_tab_options.php

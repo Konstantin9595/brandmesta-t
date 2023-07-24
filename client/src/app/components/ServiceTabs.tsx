@@ -1,21 +1,16 @@
 "use client";
 import { FC, SyntheticEvent, useEffect, useRef, useState } from "react";
-import { TabContent, TabItem } from "./ServiceSection";
 import Link from "next/link";
+import { ServiceTabsProps, ServiceTabItem, TabOption } from "@/types";
 
-type ServiceTabsProps = {
-  tabItems: TabItem[];
-  tabContents: TabContent[];
-};
-
-const ServiceTabs: FC<ServiceTabsProps> = ({ tabItems, tabContents }) => {
+const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
   const [isClient, setClient] = useState(false);
   const [activeTabId, setActiveTabId] = useState(1);
   const [isTransition, setTransition] = useState(false);
 
-  const activeTabContents: TabContent[] = tabContents.filter(
-    (tabContent: TabContent) => {
-      return tabContent.tabItemId === activeTabId;
+  const activeTabContents: ServiceTabItem[] = tabItems.filter(
+    (tabItem: ServiceTabItem) => {
+      return tabItem.tab_option_id === activeTabId;
     }
   );
 
@@ -49,18 +44,18 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabItems, tabContents }) => {
   return (
     <>
       <ul className="service-tablist" onClick={onClickHandler}>
-        {tabItems.map((item: TabItem) => {
+        {tabOptions.map((option: TabOption) => {
           return (
             <li
-              key={item.id}
-              id={`tabitem__${item.id}`}
-              tabIndex={item.id}
+              key={option.id}
+              id={`tabitem__${option.id}`}
+              tabIndex={option.id}
               className={`service-tabitem ${
-                activeTabId === item.id ? "active" : ""
+                activeTabId === option.id ? "active" : ""
               }`}
             >
               <span className="service-tabitem__lable">
-                {item.lable}
+                {option.label}
                 <div className="tabitem-icon"></div>
               </span>
             </li>
@@ -71,25 +66,25 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabItems, tabContents }) => {
         key={activeTabId}
         className={`service-tabcontent ${isTransition ? "show" : ""}`}
       >
-        {activeTabContents.map((tabContent: TabContent) => {
+        {activeTabContents.map((tabItem: ServiceTabItem) => {
           return (
-            <Link href="#" key={tabContent.id} className={`service-card`}>
+            <Link href="#" key={tabItem.id} className={`service-card`}>
               <div className="service-card__top">
-                <h3 className="service-card__label">{tabContent.cardLabel}</h3>
-                <div className={`${tabContent.iconName}-icon`}></div>
+                <h3 className="service-card__label">{tabItem.label}</h3>
+                <div className={`${tabItem.icon_name}-icon`}></div>
               </div>
               <div className="service-card__middle">
-                <h4 className="service-card__title">{tabContent.cardTitle}</h4>
+                <h4 className="service-card__title">{tabItem.title}</h4>
                 <div className="service-card__description">
-                  {tabContent.cardDescription}
+                  {tabItem.description}
                 </div>
               </div>
               <div className="service-card__bottom">
                 <ul className="service-card__taglist">
-                  {tabContent.cardTags.map((tag) => {
+                  {tabItem.service_tag.map((tag) => {
                     return (
                       <li key={tag.id} className="service-card__tagitem">
-                        {tag.lable}
+                        {tag.label}
                       </li>
                     );
                   })}

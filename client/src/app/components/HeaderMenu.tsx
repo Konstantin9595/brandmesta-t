@@ -1,10 +1,5 @@
+import { MenuItem } from "@/types";
 import Link from "next/link";
-
-type MenuItem = {
-  id: number;
-  href: string;
-  label: string;
-};
 
 const getMenu = async (): Promise<MenuItem[]> => {
   return [
