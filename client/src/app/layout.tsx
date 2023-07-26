@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={font.className}>
-        <div className="wrapper">
+        <div id="wrapper" className="wrapper">
           <Header />
           <div>{children}</div>
           <Footer />

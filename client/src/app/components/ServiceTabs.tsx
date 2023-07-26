@@ -2,6 +2,7 @@
 import { FC, SyntheticEvent, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ServiceTabsProps, ServiceTabItem, TabOption } from "@/types";
+import smoothScroll from "../../modules/smoothScroll";
 
 const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
   const [isClient, setClient] = useState(false);
@@ -35,6 +36,16 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
 
   useEffect(() => {
     setClient(!isClient);
+
+    smoothScroll.init({
+      wrapperId: "wrapper",
+      wrapperDamper: 0.07,
+      cancelOnTouch: true,
+    });
+
+    return () => {
+      smoothScroll.cancel();
+    };
   }, []);
 
   if (!isClient) {
