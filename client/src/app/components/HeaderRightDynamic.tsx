@@ -12,7 +12,6 @@ const HeaderRightDynamic: FC<PropsWithChildren> = ({ children }) => {
       <div className={`header-top__right ${isOpen ? "visible" : "hidden"}`}>
         {children}
         <div className="header-action">
-          {/* <button className="button">Обсудить задачу</button> */}
           <Button>Обсудить задачу</Button>
         </div>
       </div>
