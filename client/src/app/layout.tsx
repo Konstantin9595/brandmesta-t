@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className={font.className}>
         <div id="wrapper" className="wrapper">
           <Header />
-          <div>{children}</div>
+          {children}
           <Footer />
         </div>
       </body>

@@ -43,8 +43,59 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
       cancelOnTouch: true,
     });
 
+    window.addEventListener(
+      "scroll",
+      () => {
+        document.body.style.setProperty(
+          "--scroll",
+          (window.pageYOffset /
+            (document.body.offsetHeight - window.innerHeight)) as any
+        );
+      },
+      false
+    );
+
+    // let intersectionRatio = 0;
+
+    // const contentSection = document.querySelector(
+    //   ".brand-title"
+    // ) as HTMLElement;
+    // const headerBottom = document.querySelector(".header-bottom");
+    // const brandLine = document.querySelector(".brand-line");
+    // let baseOffset = 38;
+    // const observer = new IntersectionObserver(
+    //   (entries) => {
+    //     const ratio = entries[0].intersectionRatio;
+    //     if (ratio <= 0) {
+    //       return;
+    //     }
+    //     //console.log("intersectionRatio: ", ratio);
+    //     intersectionRatio = ratio;
+    //     // check onScroll and if intersectionRatio === 1 then move .header-bottom and .brand-line else reverseMove
+    //   },
+    //   {
+    //     //rootMargin: "40px 0px 40px 0px",
+    //     threshold: 1,
+    //   }
+    // );
+
+    // observer.observe(contentSection);
+
+    //
+
+    // window.addEventListener("scroll", () => {
+    //   if (intersectionRatio !== 1) {
+    //     return;
+    //   }
+    //   baseOffset += 32;
+    //   //console.log("baseOffset: ", baseOffset);
+    //   //headerBottom?.animate({ transform: `translateY(-${baseOffset})px` }, {});
+    //   //headerBottom.style.transform = `translateY(-${baseOffset})px`;
+    // });
+
     return () => {
       smoothScroll.cancel();
+      //observer.disconnect();
     };
   }, []);
 

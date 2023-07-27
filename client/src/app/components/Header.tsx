@@ -3,6 +3,7 @@ import HeaderLeftStatic from "./HeaderLeftStatic";
 import HeaderRightDynamic from "./HeaderRightDynamic";
 import SvgAnimation from "./SvgAnimation";
 import { fetchPageData } from "../../http/api";
+import Ticker from "./Ticker";
 
 const getTitle = async () => {
   const { title } = await fetchPageData(1);
@@ -22,8 +23,11 @@ const Header = async () => {
         </HeaderRightDynamic>
       </div>
       <div className="header-bottom">
-        <h1 className="header-title">{title}</h1>
-        <div className="header-largelogo"></div>
+        <div className="header-bottom__content">
+          <h1 className="header-title">{title}</h1>
+          <div className="header-largelogo"></div>
+        </div>
+        <Ticker />
       </div>
     </header>
   );

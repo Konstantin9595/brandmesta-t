@@ -1,3 +1,5 @@
+import BrandLine from "./BrandLine";
+
 const BrandSection = () => {
   return (
     <section className="brand">
@@ -5,7 +7,8 @@ const BrandSection = () => {
         Мы создаем <span className="eye-icon"></span> уникальные бренды
         основываясь глубоком понимании потребителей
       </h2>
-      <div className="brand-line">
+      <BrandLine />
+      {/* <div className="brand-line">
         <div className="brand-line__content">
           <div className="brand-line__text">
             Место для экспертизы и творчества
@@ -36,7 +39,7 @@ const BrandSection = () => {
           </div>
           <span className="arrow-right__icon"></span>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
