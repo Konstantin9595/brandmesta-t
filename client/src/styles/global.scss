@@ -77,10 +77,16 @@ a {
     font-weight: 500;
     line-height: 100%; /* 18px */
     letter-spacing: -0.72px;
+    background-image: linear-gradient($yellow 0 0);
+    background-size: 100% 0%;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    transition: background-size .3s, border .3s;
 
     &:active, &:hover {
-        background: $yellow;
+
         border: 2px solid $yellow;
+        background-size: 100% 100%;
         color: $black;
     }
 
