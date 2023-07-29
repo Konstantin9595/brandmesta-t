@@ -12,11 +12,8 @@ html {
     font-size: 14px;
     background: $black;
     overflow-x: hidden;
+    cursor: none;
   }
-
-// body {
-//     background: url('/BG.png') center center;
-// }
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -104,11 +101,10 @@ a {
     z-index: 1;
     position: relative;
 }
-// .button {
 
-// }
 
 @media (min-width: 1200px) {
+
     .logo::after {
         content: url('/logo.svg');
         width: 103px;

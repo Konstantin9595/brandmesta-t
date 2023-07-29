@@ -34,8 +34,17 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
     }
   };
 
+  const setPageCordinateProps = () => {
+    const pos = (window.pageYOffset /
+      (document.body.offsetHeight - window.innerHeight)) as any;
+    document.body.style.setProperty("--scroll", pos);
+  };
+
+  // smooth scroll
   useEffect(() => {
     setClient(!isClient);
+
+    window.addEventListener("scroll", setPageCordinateProps);
 
     smoothScroll.init({
       wrapperId: "wrapper",
@@ -43,59 +52,33 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
       cancelOnTouch: true,
     });
 
-    window.addEventListener(
-      "scroll",
-      () => {
-        document.body.style.setProperty(
-          "--scroll",
-          (window.pageYOffset /
-            (document.body.offsetHeight - window.innerHeight)) as any
-        );
-      },
-      false
-    );
-
-    // let intersectionRatio = 0;
-
-    // const contentSection = document.querySelector(
-    //   ".brand-title"
-    // ) as HTMLElement;
-    // const headerBottom = document.querySelector(".header-bottom");
-    // const brandLine = document.querySelector(".brand-line");
-    // let baseOffset = 38;
-    // const observer = new IntersectionObserver(
-    //   (entries) => {
-    //     const ratio = entries[0].intersectionRatio;
-    //     if (ratio <= 0) {
-    //       return;
-    //     }
-    //     //console.log("intersectionRatio: ", ratio);
-    //     intersectionRatio = ratio;
-    //     // check onScroll and if intersectionRatio === 1 then move .header-bottom and .brand-line else reverseMove
-    //   },
-    //   {
-    //     //rootMargin: "40px 0px 40px 0px",
-    //     threshold: 1,
-    //   }
-    // );
-
-    // observer.observe(contentSection);
-
-    //
-
-    // window.addEventListener("scroll", () => {
-    //   if (intersectionRatio !== 1) {
-    //     return;
-    //   }
-    //   baseOffset += 32;
-    //   //console.log("baseOffset: ", baseOffset);
-    //   //headerBottom?.animate({ transform: `translateY(-${baseOffset})px` }, {});
-    //   //headerBottom.style.transform = `translateY(-${baseOffset})px`;
-    // });
-
     return () => {
       smoothScroll.cancel();
-      //observer.disconnect();
+      window.removeEventListener("scroll", setPageCordinateProps);
+    };
+  }, []);
+
+  // custom cursor
+  useEffect(() => {
+    const body = document.querySelector("body") as any;
+    const cursor = document.createElement("div") as any;
+
+    cursor.style.cssText = `width: 24px; height: 24px; border-radius: 50%; background-color: rgba(255, 255, 0, 0.8); position: fixed; left: -100px; top: 0px; z-index: 20;`;
+
+    body.append(cursor);
+
+    const mousemoveHandler = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      cursor.style.transform = `translate3d(${
+        clientX + 100
+      }px, ${clientY}px, 0)`;
+    };
+
+    document.addEventListener("mousemove", mousemoveHandler);
+
+    return () => {
+      document.removeEventListener("mousemove", mousemoveHandler);
+      //cursor.remove();
     };
   }, []);
 
