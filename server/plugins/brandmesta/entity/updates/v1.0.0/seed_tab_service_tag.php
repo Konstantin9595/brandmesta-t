@@ -27,6 +27,21 @@ class SeedTabServiceTag extends Seeder
             ['service_tab_item_id' => 3, 'service_tag_id' => 3],
             ['service_tab_item_id' => 3, 'service_tag_id' => 4],
             ['service_tab_item_id' => 3, 'service_tag_id' => 5],
+            ['service_tab_item_id' => 4, 'service_tag_id' => 1],
+            ['service_tab_item_id' => 4, 'service_tag_id' => 2],
+            ['service_tab_item_id' => 4, 'service_tag_id' => 3],
+            ['service_tab_item_id' => 4, 'service_tag_id' => 4],
+            ['service_tab_item_id' => 4, 'service_tag_id' => 5],
+            ['service_tab_item_id' => 5, 'service_tag_id' => 1],
+            ['service_tab_item_id' => 5, 'service_tag_id' => 2],
+            ['service_tab_item_id' => 5, 'service_tag_id' => 3],
+            ['service_tab_item_id' => 5, 'service_tag_id' => 4],
+            ['service_tab_item_id' => 5, 'service_tag_id' => 5],
+            ['service_tab_item_id' => 6, 'service_tag_id' => 1],
+            ['service_tab_item_id' => 6, 'service_tag_id' => 2],
+            ['service_tab_item_id' => 6, 'service_tag_id' => 3],
+            ['service_tab_item_id' => 6, 'service_tag_id' => 4],
+            ['service_tab_item_id' => 6, 'service_tag_id' => 5],
         ], ['service_tab_item_id', 'service_tag_id']);
     }
 }
