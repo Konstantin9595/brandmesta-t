@@ -5,7 +5,7 @@
     flex-direction: column;
     margin-top: 371px;
     background: url("/BG.png");
-    background-position: right -20vw bottom -50vh;
+    background-position: right -20vw bottom -65vh;
     background-size: 150vw 110vh;
     background-repeat: no-repeat;
 
@@ -66,6 +66,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         background-size: 150vw 90vh;
+        background-position: right -20vw bottom -50vh;
         &-menu {
             flex-grow: 1;
         }

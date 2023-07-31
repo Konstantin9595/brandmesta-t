@@ -216,7 +216,7 @@
     }
 
     &-list {
-        margin-top: 37px;
+        margin-top: 18%;
         display: flex;
         flex-direction: column;
         &__item {
@@ -325,8 +325,10 @@
 
 @media (min-width: 768px) {
     .service {
+        //margin: 0 8px;
         &-card {
             max-width: 360px;
+
             &__title {
                 margin: 7.3% 0% 3% 0%;
             }

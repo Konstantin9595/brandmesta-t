@@ -44,13 +44,22 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
   useEffect(() => {
     setClient(!isClient);
 
-    window.addEventListener("scroll", setPageCordinateProps);
+    //const clientWidth = window.document.documentElement.clientWidth;
+    // if (clientWidth >= 1200) {
+    //   smoothScroll.init({
+    //     wrapperId: "wrapper",
+    //     wrapperDamper: 0.07,
+    //     cancelOnTouch: true,
+    //   });
+    // }
 
     smoothScroll.init({
       wrapperId: "wrapper",
       wrapperDamper: 0.07,
       cancelOnTouch: true,
     });
+
+    window.addEventListener("scroll", setPageCordinateProps);
 
     return () => {
       smoothScroll.cancel();
@@ -60,11 +69,15 @@ const ServiceTabs: FC<ServiceTabsProps> = ({ tabOptions, tabItems }) => {
 
   // custom cursor
   useEffect(() => {
-    const body = document.querySelector("body") as any;
-    const cursor = document.createElement("div") as any;
+    if (window.innerWidth < 1200) {
+      return;
+    }
+
+    const body = document.querySelector("body") as HTMLBodyElement;
+    const cursor = document.createElement("div") as HTMLDivElement;
 
     cursor.style.cssText = `width: 24px; height: 24px; border-radius: 50%; background-color: rgba(255, 255, 0, 0.8); position: fixed; left: -100px; top: 0px; z-index: 20;`;
-
+    body.style.cssText = "cursor: none";
     body.append(cursor);
 
     const mousemoveHandler = (e: MouseEvent) => {

@@ -51,9 +51,9 @@ module.exports = (function() {
             document.body.style.height = this.wrapperHeight + 'px';
 
             window.addEventListener('resize', this.resize.bind(this));
-            if (this.cancelOnTouch) {
-                window.addEventListener('touchstart', this.cancel.bind(this));
-            }
+            // if (this.cancelOnTouch) {
+            //     window.addEventListener('touchstart', this.cancel.bind(this));
+            // }
             this.wrapperOffset = 0.0;
             this.animateId = window.requestAnimationFrame(this.animate.bind(this));
         },

@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     .header-top {
         display: flex;
         align-items: center;
@@ -17,7 +18,7 @@
         animation: headerTopInitShow 1s ease-in;
         .header-logo {
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
         .header-top__left {
             flex-grow: 1;
@@ -33,7 +34,6 @@
             display: flex;
             flex-direction: column;
             overflow-y: hidden;
-            // z-index: -1;
             z-index: 1;
             will-change: opacity, transform;
             .header-action {
@@ -49,13 +49,12 @@
             opacity: 0;
             transform: translateX(-100%);
             transition: opacity 0.5s ease-out;
-            //z-index: 0;
         }
         .header-top__right.visible {
             opacity: 1;
             transform: translateX(0%);
             transition: opacity 0.5s ease-in;
-            //z-index: 1;
+            z-index: 2;
         }
     }
 
@@ -109,8 +108,8 @@
     .ticker {
         position: absolute;
         transform-origin: center;
-        bottom: -265px;
-        left: -650px;
+        bottom: -100%;
+        left: -50%;
         animation: tickerDeg 1s linear infinite;
         animation-play-state: paused;
         animation-delay: calc(var(--scroll) * -1s);
@@ -127,7 +126,7 @@
             transform: rotate(5deg);
         }
         to {
-            transform: rotate(-40deg);
+            transform: rotate(-50deg) translate(30%, -340%);
         }
     }
 
@@ -153,26 +152,23 @@
 }
 @media (min-width: 768px) {
     .header {
-        // min-height: 1050px;
         .header-bottom {
-            //min-height: 985px;
             .header-title {
                 max-width: 486px;
                 margin: 0 auto;
             }
         }
     }
+
+
 }
 
 @media (min-width: 1200px) {
     .header {
         margin-top: 15px;
-        // min-height: 833px;
         .header-top {
             .header-top__left {
                 width: 50%;
-                // margin: 0 20px 0 17px;
-
                 .header-logo {
                     margin-left: 32px;
                 }
@@ -187,21 +183,20 @@
                     display: flex;
                     flex-grow: 1;
                     margin: 0 20px;
-                    // margin-left: auto;
-                    // width: 30%;
+
                     align-items: center;
-                    .button {
-                        // width: 50%;
-                        // margin-left: auto;
-                    }
                 }
-                visibility: visible;
+            }
+
+            .header-top__right.hidden {
+                opacity: 1;
+                transform: translateX(-0%);
+                transition: none;
+                background: transparent;
             }
         }
 
         .header-bottom {
-            //height: 480px;
-            //min-height: 495px;
             margin-top: 270px;
             display: flex;
             justify-content: space-between;
@@ -210,25 +205,38 @@
                 font-size: 3.214rem;
                 max-width: 740px;
             }
+
+            &__content {
+                .header-title {
+                    margin-bottom: 13%;
+                }
+            }
         }
 
+        .ticker {
+            bottom: -90%;
+        }
+    }
+
+    .content {
+        .brand {
+            &-title {
+                margin: 10% auto 10% auto;
+            }
+        }
     }
 }
 
 
 @media (min-width: 1600px) {
     .header {
-        // min-height: 833px;
         .header-top {
             .header-top__left {
-                // width: 50%;
-                // margin: 0 20px 0 30px;
+                width: 100%;
                 .header-logo {
-                    // margin-left: 32px;
                 }
             }
             .header-top__right {
-                // width: 50%;
                 .header-action {
 
                     .button {
@@ -238,9 +246,22 @@
         }
 
         .header-bottom {
-
             .header-title {
+            }
 
+            &__content {
+                .header-title {
+                    margin-bottom: 4%;
+                }
+            }
+        }
+    }
+
+
+    .content {
+        .brand {
+            &-title {
+                margin: 7% auto 10% auto;
             }
         }
     }

@@ -12,7 +12,7 @@ html {
     font-size: 14px;
     background: $black;
     overflow-x: hidden;
-    cursor: none;
+    //cursor: none;
   }
 
 *, *:before, *:after {
@@ -68,7 +68,8 @@ a {
     border: 2px solid rgba(216, 230, 241, 0.40);
     border-radius: 48px;
     cursor: pointer;
-    padding: 20px 66px 24px 65px;
+    // padding: 20px 66px 24px 65px;
+    padding: 3% 8%;
     font-size: 1.286rem;
     text-align: center;
     font-weight: 500;

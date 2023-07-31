@@ -1,5 +1,6 @@
 .brand {
     color: $gray;
+    margin-bottom: 4%;
     &-title {
         font-size: 2.571rem;
         width: 327px;
@@ -9,7 +10,8 @@
         font-weight: 500;
         line-height: 90%;
         letter-spacing: -1.44px;
-        margin: 75px auto 240px auto;
+        // margin: 75px auto 240px auto;
+        margin: 21% auto 10% auto;
     }
 
     &-line {
@@ -45,11 +47,11 @@
     // }
 
     @keyframes brandLineMove{
-        from {
-            transform: translateX(-40%) rotate(0deg);
-        }
+        // from {
+        //     transform: translateX(-40%) rotate(0deg);
+        // }
         to {
-            transform: translateX(-30%) rotate(-30deg);
+            transform: translateX(-20%) rotate(-30deg);
         }
     }
 
@@ -60,7 +62,7 @@
     .brand {
         &-title {
             width: 100%;
-            margin: 42px auto 224px auto;
+            //margin: 42px auto 224px auto;
         }
     }
 }
@@ -69,7 +71,7 @@
     .brand {
         &-title {
             font-size: 5.429rem;
-            margin: 193px auto 305px auto;
+            //margin: 193px auto 305px auto;
         }
     
         &-line {
