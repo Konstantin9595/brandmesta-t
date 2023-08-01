@@ -1,6 +1,6 @@
 ### Конфигурация Backend
 
-1. Настраиваем web server
+1. Настрайка web сервера
    - Переходим в корневую папку веб сервера: `/var/www`
    - Клонируем проект ` git clone https://github.com/Konstantin9595/brandmesta-t.git`
    - Настраиваем веб сервер на `index.php` директории `server` расположенный по пути `/www/brandmesta-t/server`
@@ -16,9 +16,9 @@
    - Создаем базу данных с аналогичным названием, которое указали выше в переменной `DB_DATABASE`
 3. Установка composer пакетов
    - Находясь в папке `/www/brandmesta-t/server` запускаем `composer install`
-4. Устанавливаем Application key
+4. Генерация Application key
    - Находясь в папке `/www/brandmesta-t/server` запускаем `php artisan key:generate`
-5. Запускаем миграцию всех таблиц
+5. Запуск миграций всех таблиц
    - Находясь в папке `/www/brandmesta-t/server` запускаем `php artisan winter:up`
 6. Готово. Можем протестировать api роуты:
 
@@ -50,7 +50,7 @@
      NEXT_PUBLIC_API_URL=http://brandmesta-t.test/api
      ```
 
-2. Устанавливаем npm пакеты
+2. Установка npm пакетов
    - Находясь в папке `/www/brandmesta-t/client` запускаем `npm i`
 3. Готово. Запускаем сервер `npm run dev` и переходим на `http://localhost:3000`
 
